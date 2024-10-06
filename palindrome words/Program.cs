@@ -4,26 +4,41 @@ namespace palindrome_words
 {
     internal class Program
     {
+
         static void Main(string[] args)
         {
-            Console.WriteLine("Write a string");
-            string str = Console.ReadLine();
-            char[] StringArr = str.ToCharArray();
-            Array.Reverse(StringArr);
-            string ReverseString = new string(StringArr);
-            Console.WriteLine(ReverseString);
+            string str ;
+            Console.WriteLine("Enter a string");
+            str=Console.ReadLine();
 
-            Console.ReadLine();
-            if (str == ReverseString)
+            string revString = "";
+            string RevStringA = "";
+            for (int i = 0; i < str.Length; i++)
             {
-                Console.WriteLine(str + " is palindrome word");
+
+                revString += str[str.Length - i - 1];
+
+
+            }
+
+            for (int i = str.Length - 1; i >= 0; i--)
+            {
+                RevStringA += str[i];
+            }
+
+
+
+            if (str == revString || str == RevStringA)
+            {
+                Console.WriteLine("It is a plandrome word");
                 Console.ReadLine();
             }
             else
             {
-                Console.WriteLine(str + " is not palindrome word");
-                Console.ReadLine();
+                Console.WriteLine("It is not a plandrome word");
+                Console.ReadLine() ;
             }
+         
         }
     }
 }
